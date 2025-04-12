@@ -2,74 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PonpuCal - Efficiency Pump Calculator</title>
-    <meta name="description" content="Build with ❤️ by WolfButler">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PonpuCal - Efficiency Pump Calculator</title>
+  <meta name="description" content="Build with ❤️ by WolfButler">
 
-    <!-- CSS -->
-    <!-- Bootstrap 5.x -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <!-- CSS -->
+  <!-- Bootstrap 5.x -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 
-    <!-- Google Icons -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=water_pump" />
+  <!-- Google Icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=water_pump" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="asset/css/main.css">
-    <!-- CSS -->
+  <!-- Fontawsome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="asset/css/main.css">
+  <!-- CSS -->
 
 </head>
 
 <body>
 
-    <!-- NavBar -->
-    <nav class="navbar">
-        <div class="container-fluid">
-            <span class="navbar-brand">
-                <span class="material-symbols-outlined brand-alignment">
-                    water_pump
-                </span>
-                PonpuCal
-            </span>
-        </div>
-    </nav>
-    <!-- NavBar -->
+  <!-- NavBar -->
+  <nav class="navbar">
+    <div class="container-fluid">
+      <span class="navbar-brand align-items-center">
+        <span class="material-symbols-outlined brand-alignment">
+          water_pump
+        </span>
+        PonpuCal
+      </span>
 
-    <!-- Calculator Section -->
-    <div class="container">
-
-        <div class="mt-5 mb-3">
-            <label class="form-label">ประเภทของปั้ม</label>
-            <select class="form-select" aria-label="pump-types" required>
-                <option value="" selected>ปั้มหอยโข่ง</option>
-                <option value="">ปั้มไฮดรอลิค</option>
-                <option value="">ปั้มลูกสูบ</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">อัตราการไหล (ลบ.ม./วินาที)</label>
-            <input class="form-control" type="number" name="" placeholder="" required>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">อัตราการไหล (ลบ.ม./วินาที)</label>
-            <input class="form-control" type="number" name="" placeholder="" required>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">อัตราการไหล (ลบ.ม./วินาที)</label>
-            <input class="form-control" type="number" name="" placeholder="" required>
-        </div>
-
+      <a class="btn btn-dark" href="#">
+        <i class="fa fa-moon-o" aria-hidden="true"></i>
+      </a>
     </div>
-    <!-- Calculator Section -->
+  </nav>
+  <!-- NavBar -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
+  <!-- Calculator Section -->
+  <div class="container max-screen">
+
+    <!-- Result Calculator -->
+    <div class="mt-3">
+      <div class="card text-center">
+        <div class="card-header">
+          ประสิทธิภาพปั้มของคุณ
+        </div>
+        <div class="card-body">
+          <h1 class="card-title" id="result_efficiency">1000</h1>
+          เปอร์เซ็นต์
+        </div>
+      </div>
+    </div>
+    <!-- Result Calculator -->
+
+    <div class="mt-3 mb-3">
+      <label class="form-label">ประเภทของปั้ม</label>
+      <select class="form-select" aria-label="pump-types" id="pump_types" required>
+        <option value="1" selected>ปั้มหอยโข่ง</option>
+        <option value="2">ปั้มไฮดรอลิค</option>
+        <option value="3">ปั้มลูกสูบ</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">อัตราการไหล (ลบ.ม./วินาที)</label>
+      <input class="form-control" type="number" name="flowrate" id="flowrate" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">แรงดันน้ำออก (ม.)</label>
+      <input class="form-control" type="number" name="pressure" id="pressure" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">พลังงานที่ใช้ (วัตต์)</label>
+      <input class="form-control" type="number" name="pw_consumption" id="pw_consumption" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">ขนาดท่อ (เมตร)</label>
+      <input class="form-control" type="number" name="pipe_diameter" id="pipe_diameter" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">ระดับความต่างจากผิวน้ำ (เมตร)</label>
+      <input class="form-control" type="number" name="elevation_diff" id="elevation_diff" required>
+    </div>
+
+    <div class="mt-3 d-grid gap-2">
+      <button class="btn btn-primary" onclick="calcEfficiency()">คำนวณประสิทธิภาพปั้ม</button>
+    </div>
+
+  </div>
+  <!-- Calculator Section -->
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="asset/js/calculator.js"></script>
+  <!-- JavaScript -->
 </body>
 
 </html>

@@ -5,6 +5,10 @@ body {
     font-family: "Noto Sans Thai Looped", sans-serif !important;
 }
 
+.max-screen {
+    max-width: 500px;
+}
+
 /* Google Icons Setting */
 .material-symbols-outlined {
   font-variation-settings:
