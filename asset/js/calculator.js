@@ -17,7 +17,7 @@ function calcEfficiency() {
     // 2.4. Summation water power, elevation lost and pipe lost.
     const totalPowerLost = waterPower+elevationLost+pipeLost;
     // 2.5. Final Efficiency percent calculation.
-    const efficiencyPercent = (totalPowerLost/pwConsumptionElement) * pumpTypeElement;
+    const efficiencyPercent = (totalPowerLost/pwConsumptionElement) * pumpTypeElement || 0;
 
     // 3. Replace value on the HTML page in result_efficiency Element.
     document.getElementById("result_efficiency").textContent = efficiencyPercent.toFixed(2);
