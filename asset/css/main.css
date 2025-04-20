@@ -2,6 +2,9 @@
 
 /* Default Page Setting */
 body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
     font-family: "Noto Sans Thai Looped", sans-serif !important;
 }
 
@@ -20,4 +23,22 @@ body {
 
 .brand-alignment {
     vertical-align: text-bottom !important;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+    padding: 1rem;
+  }
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    background-color: #1f1f1f;
+}
+
+.mode-toggle {
+    cursor: pointer;
 }
