@@ -21,12 +21,13 @@ body {
   'opsz' 24
 }
 
+/* darkmode style */
 .brand-alignment {
     vertical-align: text-bottom !important;
 }
 
 .navbar {
-    padding: 1rem;
+    padding: 16px;
   }
 
 body.dark-mode {
@@ -40,4 +41,20 @@ body.dark-mode .navbar {
 
 .mode-toggle {
     cursor: pointer;
+}
+
+/* footer style */
+footer .container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 14px;
 }
